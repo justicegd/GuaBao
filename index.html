@@ -6,44 +6,74 @@
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .content {
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="nav">
         <img class="logo" src="img/logo.jpg" alt="">
         <div class="menu"><span class="menu-text active">刈包料理</span></div>
-        <div class="menu"><span class="menu-text">沁心飲品</span></div>
-        <div class="menu"><span class="menu-text">套餐搭配</span></div>
+        <div class="menu"><span class="menu-text">清涼飲品</span></div>
+        <div class="menu"><span class="menu-text">超值套餐</span></div>
+    </div>
+    <div class="content">
+        <div class="memu-title">刈包料理</div>
+        <div class="menu-list">
+                <img class="menu-img" src="https://placem.at/people?w=200&h=150" alt="">
+                <div class="menu-introduction">
+                    <span class="menu-name">產品名稱</span>
+                    <span class="menu-price">價錢</span>
+                </div>
+
+        </div>
+
+        <div class="memu-title">清涼飲品</div>
+        <div class="menu-list">
+        </div>
+
+        <div class="memu-title">超值套餐</div>
+        <div class="menu-list">
+        </div>
     </div>
 </div>
 
 
 <style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "Raleway","微軟正黑體",sans-serif;
+    }
     html {
-        background-color: darkgray;
+        background-color: gray;
+
     }
     body{
         padding: 0px;
         margin: 0;
     }
-
     .nav {
-        height: 100vh;
+        width: 150px;
         width: 100%;
         background-color: white;
         float: left;
+        position: absolute;
     }
     .logo {
-        height: 600px;
+        height: 100vh;
         margin: auto;
         display: block;
-        border-radius: 40%;
+        z-index: 10;
     }
     .menu{
         margin-bottom: 10px;
         margin-top: 10px;
         display: none;
-        width: 130px;
+        width: 150px;
         height: 20px;
         text-align: center;
     }
@@ -51,39 +81,64 @@
         width: 1000px;
         display: block;
         margin:auto;
+        position: relative;
     }
     .menu-text{
         border-bottom-style: solid;
         border-width: 1px;
     }
-    .menu-text .active{
-        color: bl;
+    .content{
+        margin-left: 150px;
+        width: 850px;
     }
+    .menu-list{
+        margin: auto;
+        color: white;
+        position: relative;
+        z-index: -11;
+    }
+    .menu-text{
+        color: black;
+        transition: color 0.2s;
+    }
+    .menu-text:hover{
+        color: red;
+    }
+    .memu-title {
+        background-color: red;
+        color: white;
+        width: 850px;
+    }
+    .menu-introduction{
+        display: inline;
+        position: absolute;
+    }
+    .menu-name{
+        float: left;
+    }
+    .menu-price{
+        float: right;
+    }
+    .menu-img{
+        position: absolute;
+    }
+
 
 </style>
 <script>
 
     $('.logo').delay(1000).animate({
-        height: "130px",
+        height: "150px",
         margin: "0"
     }, 1500);
     $('.nav').delay(1000).animate({
         height: "70vh",
-        width:"130px",
+        width:"150px",
         margin: "0",
 
     }, 1500);
     $('.menu').delay(1000).fadeIn(1500);
-    $('.menu-text').hover(function(){
-       $(this).animate({
-           color:"red",
-       })
-    },function (){
-        $(this).animate({
-            height:"200px",
-            color:"black",
-        })
-    });
+
 
 </script>
 </body>
